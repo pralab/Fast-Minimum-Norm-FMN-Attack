@@ -9,7 +9,7 @@ Here is a conceptual figure of the attack. The algorithm performes normalized
 gradient descent and projects into an epsilon Lp-ball which is adapted to 
 find the minimum norm adversarials.
 
-<img src="assets/gifs/path.gif" alt="path" style="width:50px;"/>
+<img src="assets/gifs/path.gif" alt="path" width="50"/>
 
 <small> GIF created with [SecML](https://secml.gitlab.io/).</small>
 
