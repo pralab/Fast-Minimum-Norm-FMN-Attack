@@ -1,0 +1,7 @@
+foolbox
+numpy
+torch
+torchvision
+dill
+cox
+tensorboardX

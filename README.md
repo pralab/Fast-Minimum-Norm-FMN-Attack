@@ -9,9 +9,9 @@ Here is a conceptual figure of the attack. The algorithm performes normalized
 gradient descent and projects into an epsilon Lp-ball which is adapted to 
 find the minimum norm adversarials.
 
-<img src="assets/gifs/path.gif" alt="path" style="width:200px;"/>
+<img src="assets/gifs/path.gif" alt="path" style="width:50px;"/>
 
-GIF created with [SecML](https://secml.gitlab.io/).
+<small> GIF created with [SecML](https://secml.gitlab.io/).</small>
 
 Finally, these are results against a MNIST 9-layer ConvNet.
 
