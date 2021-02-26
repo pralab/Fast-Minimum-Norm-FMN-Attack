@@ -3,6 +3,8 @@
 The Fast Minimum Norm Attack (FMN), from 
 Fast Minimum-norm Adversarial Attacks through Adaptive Norm Constraints.
 
+Preprint available at [https://arxiv.org/abs/2102.12827](https://arxiv.org/abs/2102.12827)
+
 The attack is developed with [Foolbox](https://foolbox.readthedocs.io/en/stable/).
 
 For a quick demo example, check out [this notebook](src/fmn_example.ipynb).
@@ -16,7 +18,7 @@ find the minimum norm adversarials.
 
 <img src="assets/gifs/path.gif" alt="path" width="400"/>
 
-<small> GIF created with [SecML](https://secml.gitlab.io/).</small>
+<small> GIF created with [SecML](https://secml.gitlab.io/) library.</small>
 
 These are results against a MNIST 9-layer ConvNet. Check out the [notebooks](src/fmn_demo.ipynb) for more examples.
 
