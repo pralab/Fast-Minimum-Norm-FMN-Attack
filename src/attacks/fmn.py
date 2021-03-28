@@ -177,7 +177,6 @@ class FMNAttackLp(MinimizationAttack):
             x_adv = x + delta
 
             loss, (logits, loss_batch), gradients = grad_and_logits(x_adv, classes)
-            print(logits.raw.tolist())
             is_adversarial = criterion_(x_adv, logits)
 
             lp = ep.norms.lp(flatten(delta), p=self.p, axis=-1)
