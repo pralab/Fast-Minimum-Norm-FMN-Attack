@@ -104,7 +104,7 @@ class FMNAttackLp(MinimizationAttack):
 
             loss = logits[rows, c_minimize] - logits[rows, c_maximize]
 
-            return -loss.sum(), logits
+            return -loss.sum(), (logits, loss)
 
         x, restore_type = ep.astensor_(inputs)
         del inputs, criterion, kwargs
@@ -146,7 +146,6 @@ class FMNAttackLp(MinimizationAttack):
 
         min_, max_ = model.bounds
         rows = range(N)
-
         grad_and_logits = ep.value_and_grad_fn(x, loss_fn, has_aux=True)
 
         if self.p != 0:
@@ -176,8 +175,9 @@ class FMNAttackLp(MinimizationAttack):
             )
 
             x_adv = x + delta
-            loss, logits, gradients = grad_and_logits(x_adv, classes)
 
+            loss, (logits, loss_batch), gradients = grad_and_logits(x_adv, classes)
+            print(logits.raw.tolist())
             is_adversarial = criterion_(x_adv, logits)
 
             lp = ep.norms.lp(flatten(delta), p=self.p, axis=-1)
@@ -189,7 +189,7 @@ class FMNAttackLp(MinimizationAttack):
 
             # update epsilon
             if self.p != 0:
-                distance_to_boundary = abs(loss) / ep.norms.lp(flatten(gradients), p=self.dual, axis=-1)  # *
+                distance_to_boundary = abs(loss_batch) / ep.norms.lp(flatten(gradients), p=self.dual, axis=-1)
                 epsilon = ep.where(is_adversarial,
                                    ep.minimum(epsilon * (1 - gamma),
                                               ep.norms.lp(flatten(best_delta), p=self.p, axis=-1)),
