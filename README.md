@@ -5,7 +5,7 @@ Fast Minimum-norm Adversarial Attacks through Adaptive Norm Constraints.
 
 Preprint available at [https://arxiv.org/abs/2102.12827](https://arxiv.org/abs/2102.12827)
 
-🎉🎉🎉 Now available also in [Foolbox](https://github.com/bethgelab/foolbox), and  [Adversarial Library](jeromerony/adversarial-library). 🎉🎉🎉
+🎉🎉🎉 Now available also in [Foolbox](https://github.com/bethgelab/foolbox), and  [Adversarial Library](https://github.com/jeromerony/adversarial-library). 🎉🎉🎉
 
 For a quick demo example, check out [this notebook](src/fmn_example.ipynb).
 
