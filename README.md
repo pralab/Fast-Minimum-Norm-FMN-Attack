@@ -55,7 +55,7 @@ import foolbox as fb
 from secml.adv.attacks.evasion import CAttackEvasionFoolbox
 
 model = ...  # pytorch model
-secml_model = clf = CClassifierPyTorch(model=model, pretrained=True, ...)  # wraps pytorch model in Secml
+secml_model = CClassifierPyTorch(model=model, pretrained=True, ...)  # wraps pytorch model in Secml
 attack = CAttackEvasionFoolbox(secml_model, y_target=None, fb_attack_class=fb.attacks.L1FMNAttack)
 y_pred, _, adv_ds, _ = attack.run(samples, labels)
 
